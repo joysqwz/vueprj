@@ -35,14 +35,3 @@ services:
       - 8.8.8.8
       - 8.8.4.4
     command: npm run dev
-
-  frontend:
-    build: ./client
-    restart: always
-    depends_on:
-      - backend
-    ports:
-      - '5173:5173'
-    volumes:
-      - ./client:/client
-    command: npm run dev
