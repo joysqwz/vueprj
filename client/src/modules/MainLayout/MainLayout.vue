@@ -5,11 +5,10 @@
         <img :src="logo" class="header__logo" alt="Логотип" />
       </RouterLink>
       <h1
-        :class="[
-          'header__title',
-          { 'header__title--alt': headerTitle === 'Панель администратора' },
-        ]"
-      >
+          :class="[
+            'header__title',
+            { 'header__title--alt': headerTitle === 'Панель администратора' },
+          ]">
         {{ headerTitle }}
       </h1>
       <div class="header__buttons">
@@ -32,10 +31,9 @@
       <slot></slot>
       <div class="btn-wrapper btn-wrapper--right">
         <button
-          class="scrolled-btn scrolled-btn--top btn-style"
-          v-if="isScrolled"
-          @click="scrollToTop"
-        >
+                class="scrolled-btn scrolled-btn--top btn-style"
+                v-if="isScrolled"
+                @click="scrollToTop">
           <ToUpIcon class="scrolled-btn__icon" />
         </button>
       </div>
@@ -220,7 +218,7 @@ const scrollToTop = () => {
 
 .scrolled-btn {
   position: sticky;
-  top: 95%;
+  top: 90%;
   display: flex;
   align-items: center;
   scroll-behavior: smooth;
