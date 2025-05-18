@@ -5,11 +5,12 @@ const COOKIE_TTL_DAYS = 365
 
 export const deviceIdManager = {
   async getOrSet() {
-    const fromCookie = this.getFromCookie()
-    if (fromCookie) return fromCookie
-    const newId = uuidv4()
-    this.setCookie(newId)
-    return newId
+    let id = this.getFromCookie()
+    if (id) {
+      this.setCookie(id)
+    }
+    id = uuidv4()
+    this.setCookie(id)
   },
 
   getFromCookie() {
